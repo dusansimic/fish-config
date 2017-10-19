@@ -2,7 +2,8 @@ function fish_prompt
 	set -l git_branch (git branch ^/dev/null | sed -n '/\* /s///p')
   if [ (whoami) = "root" ]
     set_color normal
-    printf (whoami)'@'(hostname)' '
+    #printf (whoami)'@'(hostname)
+		printf ' '
     set_color red
     printf (prompt_pwd)
 		if [ $git_branch ]
@@ -13,7 +14,8 @@ function fish_prompt
     printf ' λ '
   else
     set_color normal
-    printf (whoami)'@'(hostname)' '
+    #printf (whoami)'@'(hostname)
+		printf ' '
     set_color $fish_color_cwd
     #printf (basename $PWD) "><> "
     printf (prompt_pwd)
